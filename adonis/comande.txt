@@ -1,2 +1,0 @@
-CRIAR APP
-    adonis new nome_projeto
