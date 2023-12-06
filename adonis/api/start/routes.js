@@ -17,5 +17,5 @@
 const Route = use('Route')
 
 Route.get('/', () => {
-  return { status: 'online' }
+  return { status: 'Projeto utilizando adonis' }
 })

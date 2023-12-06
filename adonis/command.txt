@@ -1,0 +1,4 @@
+
+CRIAR PROJETO BACKEND COM ADONIS
+
+    adonis new nomeDiretorio --api-only (--api-only == não tras a parte das views )
