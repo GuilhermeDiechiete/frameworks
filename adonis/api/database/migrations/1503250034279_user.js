@@ -1,3 +1,4 @@
+
 'use strict'
 
 /** @type {import('@adonisjs/lucid/src/Schema')} */
@@ -7,9 +8,11 @@ class UserSchema extends Schema {
   up () {
     this.create('users', (table) => {
       table.increments()
+      table.string('name', 80).notNullable().unique()
       table.string('username', 80).notNullable().unique()
       table.string('email', 254).notNullable().unique()
       table.string('password', 60).notNullable()
+      table.integer('type_user_id').unsigned().references('id').inTable('type_users').notNullable()
       table.timestamps()
     })
   }

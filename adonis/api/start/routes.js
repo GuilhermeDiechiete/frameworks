@@ -1,21 +1,21 @@
 'use strict'
 
-/*
-|--------------------------------------------------------------------------
-| Routes
-|--------------------------------------------------------------------------
-|
-| Http routes are entry points to your web application. You can create
-| routes for different URLs and bind Controller actions to them.
-|
-| A complete guide on routing is available here.
-| http://adonisjs.com/docs/4.1/routing
-|
-*/
-
-/** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
 Route.get('/', () => {
   return { status: 'Projeto utilizando adonis' }
 })
+// Route.get('/users', 'UserController.index') // mostrar todos os resultados (usuarios)
+// Route.get('/users/:id', 'UserController.show') // mostrar apenas um resultado
+// Route.post('/users', 'UserController.store') // criar um usuario
+// Route.patch('/users/:id', 'UserController.update') // atualizar o usuario
+// Route.delete('/users/:id', 'UserController.destroy') // deletar um usuario
+
+
+/*
+  resource -> cria sete rotas padroes, o apiOnly define apenas rotas do backend
+*/
+Route.resource('users', 'UserController').apiOnly()
+Route.resource('client', 'ClientController').apiOnly()
+Route.resource('exercises', 'ExerciseController').apiOnly()
+Route.resource('training', 'TrainingController').apiOnly()
